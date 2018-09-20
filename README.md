@@ -21,3 +21,13 @@ cd mpt-laravel
 ```
 composer install
 ```
+
+* Build DataBase
+```
+php artisan migrate:refresh --seed
+```
+
+* Run it
+```
+comoposer run watch
+```
