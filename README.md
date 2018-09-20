@@ -20,6 +20,7 @@ cd mpt-laravel
 * Install libraries
 ```
 composer install
+npm install 
 ```
 
 * Build DataBase
