@@ -32,5 +32,3 @@ php artisan migrate:refresh --seed
 ```
 npm run watch
 ```
-
-### AA
