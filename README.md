@@ -30,5 +30,5 @@ php artisan migrate:refresh --seed
 
 * Run it
 ```
-comoposer run watch
+npm run watch
 ```

@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae051ac5-55c4-48e6-8005-0bf896b90df4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php-docker-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mpt-laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mpt-laravel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,27 +28,27 @@
           <entry key="env" value="1" />
           <entry key="example" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="md" value="1" />
-          <entry key="php" value="2" />
+          <entry key="md" value="2" />
+          <entry key="php" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Markdown" value="1" />
-          <entry key="PHP" value="2" />
+          <entry key="Markdown" value="2" />
+          <entry key="PHP" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="14" />
-          <entry key="md" value="301" />
+          <entry key="md" value="304" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="301" />
+          <entry key="Markdown" value="304" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -75,32 +65,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="330">
-                <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+              <first_editor relative-caret-position="402">
+                <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Feature/InfluencersTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-296">
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/TwitterTweetsTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -338,14 +310,11 @@
       <option name="presentableId" value="Default" />
       <updated>1537472685472</updated>
       <workItem from="1537472688921" duration="934000" />
-      <workItem from="1537475171359" duration="1625000" />
+      <workItem from="1537475171359" duration="1999000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="InfluencersTest_an_authenticated_user_can_list_influencers - 2018.09.20 at 15h 40m 18s.xml">
-      <configuration name="InfluencersTest.an_authenticated_user_can_list_influencers" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="InfluencersTest_an_authenticated_user_can_list_influencers - 2018.09.20 at 15h 40m 26s.xml">
       <configuration name="InfluencersTest.an_authenticated_user_can_list_influencers" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -373,22 +342,25 @@
     <history-entry file="TwitterTweetsTest_it_get_twitts_from_a_specific_twitter_name - 2018.09.20 at 15h 48m 09s.xml">
       <configuration name="TwitterTweetsTest.it_get_twitts_from_a_specific_twitter_name" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="TwitterTweetsTest_it_get_twitts_from_a_specific_twitter_name - 2018.09.20 at 15h 54m 13s.xml">
+      <configuration name="TwitterTweetsTest.it_get_twitts_from_a_specific_twitter_name" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2559000" />
+    <option name="totallyTimeSpent" value="2933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294979" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -421,13 +393,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -442,13 +407,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="330">
-            <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Twitter/Twitter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Twitter/TwitterTweets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/TwitterTweetsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -459,10 +435,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/TwitterTweetsTest.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="402">
+            <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
