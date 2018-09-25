@@ -11,10 +11,17 @@ namespace App\Libraries\Twitter;
 
 class Twitter
 {
-    protected $access_token = "46398437-puAC4bJb7CnXMZwhkZUS1xlAPMzbEnOfqaYcScfor";
-    protected $access_token_secret = "Tc26FUwk08vqGnPBJSI2b92qoJoAAYlIAqmEGsRw5O7OW";
-    protected $api_key = "wOfhwIm5ZlBEpEiWq6ul2A";
-    protected $api_secret_key = "MX6PhwTifqmWPMCz24I46PczkIlwAAR87hiVYx0gw";
+    protected $access_token;
+    protected $access_token_secret;
+    protected $api_key;
+    protected $api_secret_key;
+
+    function __construct(){
+        $this->access_token = $_ENV["TWITTER_TOKEN"];
+        $this->access_token_secret = $_ENV["TWITTER_TOKEN_SECRET"];
+        $this->api_key = $_ENV["TWITTER_API_KEY"];
+        $this->api_secret_key = $_ENV["TWITTER_API_SECRET_KEY"];
+    }
 
     function getTwitterOauth() {
         return array(

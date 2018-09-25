@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\Libraries\Twitter\TwitterTweets;
 
+
 class TwitterTweetsTest extends TestCase
 {
     use DatabaseMigrations;
@@ -14,8 +15,9 @@ class TwitterTweetsTest extends TestCase
     public function it_get_twitts_from_a_specific_twitter_name()
     {
         $twitter = new TwitterTweets();
-        $twitts = $twitter->getTwittsByUser('miputotuit');
-        //dd($twitts);
+        $tweets = $twitter->getTweetsByUser('miputotuit');
+
+        dd($tweets);
 
         $this->assertTrue(false);
     }
