@@ -1,14 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 7/09/18
- * Time: 12:37 PM
- */
-
 namespace App\Libraries\Twitter;
 
-
+/**
+ * Class Twitter
+ * @package App\Libraries\Twitter
+ */
 class Twitter
 {
     protected $access_token;
@@ -16,6 +12,9 @@ class Twitter
     protected $api_key;
     protected $api_secret_key;
 
+    /**
+     * Twitter constructor.
+     */
     function __construct(){
         $this->access_token = $_ENV["TWITTER_TOKEN"];
         $this->access_token_secret = $_ENV["TWITTER_TOKEN_SECRET"];
@@ -23,6 +22,10 @@ class Twitter
         $this->api_secret_key = $_ENV["TWITTER_API_SECRET_KEY"];
     }
 
+    /**
+     *
+     * @return array
+     */
     function getTwitterOauth() {
         return array(
             'oauth_consumer_key' => $this->api_key,
@@ -34,6 +37,13 @@ class Twitter
         );
     }
 
+    /**
+     *
+     * @param $method
+     * @param $url
+     * @param array $query
+     * @return mixed
+     */
     function getTwitterData($method, $url, $query = array()) {
         $oauth = $this->getTwitterOauth();
         $base_params = empty($query) ? $oauth : array_merge($query,$oauth);
@@ -58,6 +68,13 @@ class Twitter
         return  json_decode($json);
     }
 
+    /**
+     *
+     * @param $baseURI
+     * @param $method
+     * @param $params
+     * @return string
+     */
     function buildBaseString($baseURI, $method, $params)
     {
         $r = array();
@@ -68,6 +85,11 @@ class Twitter
         return $method."&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $r));
     }
 
+    /**
+     *
+     * @param $oauth
+     * @return string
+     */
     function buildAuthorizationHeader($oauth)
     {
         $r = 'Authorization: OAuth ';
