@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae051ac5-55c4-48e6-8005-0bf896b90df4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Elastic/Elastic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Elastic/ElasticTweets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Elastic/ElasticsearchObserver.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Twitter/Twitter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Twitter/Twitter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Twitter/TwitterTweets.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Twitter/TwitterTweets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/TwitterTweetsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TwitterTweetsTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +32,7 @@
         <counts>
           <entry key="env" value="4" />
           <entry key="example" value="2" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="json" value="1" />
           <entry key="md" value="3" />
           <entry key="php" value="27" />
@@ -50,14 +45,14 @@
           <entry key="JSON" value="1" />
           <entry key="Markdown" value="3" />
           <entry key="PHP" value="27" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="69" />
-          <entry key="gitignore" value="14" />
+          <entry key="gitignore" value="21" />
           <entry key="md" value="311" />
           <entry key="php" value="2293" />
         </counts>
@@ -67,7 +62,7 @@
           <entry key=".env file" value="69" />
           <entry key="Markdown" value="311" />
           <entry key="PHP" value="2293" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -91,14 +86,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Feature/TweetsTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+            <state relative-caret-position="334">
+              <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
                 <element signature="e#33#52#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -166,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/Libraries/Elastic/ElasticsearchObserver.php" />
         <option value="$PROJECT_DIR$/.env.example" />
@@ -177,6 +180,7 @@
         <option value="$PROJECT_DIR$/app/Libraries/Elastic/ElasticTweets.php" />
         <option value="$PROJECT_DIR$/tests/Feature/TweetsTest.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Twitter/TwitterTweets.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -289,7 +293,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
-    <option name="y" value="1076" />
+    <option name="y" value="-4" />
     <option name="width" value="1920" />
     <option name="height" value="1084" />
   </component>
@@ -423,7 +427,7 @@
       <workItem from="1537553026667" duration="15083000" />
       <workItem from="1537809191409" duration="8930000" />
       <workItem from="1537907256295" duration="4435000" />
-      <workItem from="1537972024380" duration="19194000" />
+      <workItem from="1537972024380" duration="20139000" />
     </task>
     <servers />
   </component>
@@ -460,10 +464,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54826000" />
+    <option name="totallyTimeSpent" value="55771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26307365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -496,13 +501,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/services.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -641,11 +639,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/TweetsTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        <state relative-caret-position="334">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
             <element signature="e#33#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
