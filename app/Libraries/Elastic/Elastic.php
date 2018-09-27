@@ -45,7 +45,11 @@ class Elastic
     public function deleteIndex($index_name)
     {
         $params = ['index' =>$index_name];
-        $this->client->indices()->delete($params);
+        try{
+            $this->client->indices()->delete($params);
+        }catch (\Exception $e){
+
+        }
     }
 
 }

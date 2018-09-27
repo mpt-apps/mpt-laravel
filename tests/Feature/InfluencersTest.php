@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\Libraries\Twitter\TwitterUsers;
+use App\Libraries\Twitter\TwitterTweets;
+use App\Libraries\Elastic\ElasticTweets;
 
 class InfluencersTest extends TestCase
 {
@@ -51,5 +53,28 @@ class InfluencersTest extends TestCase
         $this->get($response->headers->get('Location'))
             ->assertSee("Error - User not found !!!");
     }
+
+
+    /** @test  */
+    public function an_authenticated_user_can_list_tweets_from_a_influencer_selected()
+    {
+        $this->signIn();
+        $influencer = create('App\Influencer');
+
+        $twitter = new TwitterTweets();
+        $tweets = $twitter->getTweetsByUser($influencer->twitter_screen_name);
+
+        $etweets = new ElasticTweets();
+        $etweets->deleteIndex('twitter');
+
+        $etweets->storeTweets($tweets);
+
+        sleep(2);
+
+        $this->get('/admin/influencers/'.$influencer->id.'/tweets/list')
+            ->assertSee($tweets[0]->id);
+    }
+
+
 
 }

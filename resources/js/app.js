@@ -18,6 +18,7 @@ Vue.component('flash', require('./components/Flash.vue'));
 Vue.component('paginator', require('./components/Paginator.vue'));
 
 Vue.component('admin-influencers-view', require('./pages/AdminInfluencers.vue'));
+Vue.component('admin-influencer-tweets-view', require('./pages/AdminInfluencerTweets.vue'));
 
 const app = new Vue({
     el: '#app'

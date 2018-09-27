@@ -25,6 +25,10 @@ Route::get('/admin/influencers', 'Admin\InfluencersController@index');
 Route::get('/admin/influencers/list', 'Admin\InfluencersController@list');
 Route::get('/admin/influencers/create', 'Admin\InfluencersController@create');
 Route::post('/admin/influencers', 'Admin\InfluencersController@store');
+
+
+Route::get('/admin/influencers/{influencer}/tweets', 'Admin\TweetsController@index');
+Route::get('/admin/influencers/{influencer}/tweets/list', 'Admin\TweetsController@list');
 /* Fin Admin */
 
 
