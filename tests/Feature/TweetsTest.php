@@ -19,7 +19,7 @@ class TweetsTest extends TestCase
         $tweet = $tweets[0];
 
         $etweets = new ElasticTweets();
-        $etweets->deleteIndex('twitter');
+//        $etweets->deleteIndex('twitter');
         $etweets->saveTweet($tweet);
 
         $etweet = $etweets->getTweet($tweet->id_str);

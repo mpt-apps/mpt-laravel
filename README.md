@@ -32,3 +32,8 @@ php artisan migrate:refresh --seed
 ```
 npm run watch
 ```
+
+* Add Encryption Key
+```
+php artisan key:generate
+```
