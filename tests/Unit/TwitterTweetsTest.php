@@ -14,12 +14,13 @@ class TwitterTweetsTest extends TestCase
     /** @test */
     public function it_get_twitts_from_a_specific_twitter_name()
     {
-//        $twitter = new TwitterTweets();
-//        $tweets = $twitter->getTweetsByUser('miputotuit');
-//
-//        dd($tweets);
+        $twitter = new TwitterTweets();
+        $tweets = $twitter->getTweetsByUser('miputotuit');
+        $tweet_id = $tweets[0]->id;
 
-        $this->assertTrue(true);
+        $tweet = $twitter->getTweetById($tweet_id);
+
+        $this->assertEquals($tweet_id, $tweet->id);
     }
 
     /** @test */

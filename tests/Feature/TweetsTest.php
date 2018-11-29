@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Libraries\MptTweets;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use App\Libraries\Elastic\ElasticTweets;
@@ -12,27 +13,31 @@ class TweetsTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function mpt_store_tweets_from_a_influencer()
+    public function mpt_store_last_tweet_from_a_influencer()
     {
         $twitter = new TwitterTweets();
         $tweets = $twitter->getTweetsByUser();
         $tweet = $tweets[0];
 
-        $etweets = new ElasticTweets();
-//        $etweets->deleteIndex('twitter');
+        $etweets = new ElasticTweets(
+            getElasticsearchTestHosts()
+        );
+        $etweets->deleteIndex('twitter');
         $etweets->saveTweet($tweet);
 
-        $etweet = $etweets->getTweet($tweet->id_str);
-
-        //dd($etweet);
+        $etweet = $etweets->getTweetById($tweet->id_str);
 
         $this->assertEquals($tweet->created_at, $etweet['created_at']);
     }
 
+
+
     /** @test */
     public function mpt_get_tweets_by_user()
     {
-        $etweets = new ElasticTweets();
+        $etweets = new ElasticTweets(
+            getElasticsearchTestHosts()
+        );
         $etweets->deleteIndex('twitter');
 
         $twitter = new TwitterTweets();
@@ -56,6 +61,31 @@ class TweetsTest extends TestCase
         $this->assertEquals(count($tweets2), count($tweets22));
     }
 
+    /** @test */
+    public function mpt_store_tweets_from_a_influencer()
+    {
+        // Get a user
+
+        // Save all tweets from a user
+
+        $elasticsearchTweetsManager = new ElasticTweets(
+            getElasticsearchTestHosts()
+        );
+        $elasticsearchTweetsManager->deleteIndex('twitter');
+
+        $mptTweetsManager = new MptTweets($elasticsearchTweetsManager);
+
+        $mptTweetsManager->storeTweetsByUser('miputotuit');
+
+
+        sleep(2);
+
+        $tweets = $elasticsearchTweetsManager->getAll();
+
+        dd(count($tweets));
+
+        $this->assertTrue(true);
+    }
 
 
 

@@ -10,9 +10,9 @@ class ElasticTweets extends Elastic
     /**
      * ElasticTweets constructor.
      */
-    function __construct()
+    function __construct($hosts = null)
     {
-        parent::__construct();
+        parent::__construct($hosts);
 
         $this->elastic_info = [
             'index' => 'twitter',
@@ -31,53 +31,66 @@ class ElasticTweets extends Elastic
 
     }
 
+
     /**
      * @param $body
      * @param string $id
      */
-    public function saveTweet($body, $id ='')
+    public function saveTweet($body, $id = '')
     {
+        $id = $body->id_str ?: $id;
+
         $params = [
             'index' => $this->elastic_info['index'],
             'type' => $this->elastic_info['type'],
             'id' => $body->id_str,
             'body' => $body
         ];
-        if (trim($id) != '') {
+
+        if (trim($id) != '' && !$this->getTweetById($id)) {
             $params['id'] = $id;
+            return $this->client->index($params);
         }
-        return $this->client->index($params);
+
+        return false;
     }
+
 
     /**
      * @param $id
      * @return mixed
      */
-    public function getTweet($id)
+    public function getTweetById($id)
     {
         $params = [
             'index' => $this->elastic_info['index'],
             'type' => $this->elastic_info['type'],
             'id' => $id
         ];
-        $response = $this->client->get($params);
-        return $response['_source'];
+
+        try {
+            $response = $this->client->get($params);
+            return $response['_source'];
+        } catch (\Exception $exception){
+            return false;
+        }
     }
 
+
     /**
-     * @param $seacrh
+     * @param $search
      * @return array
      */
-    public function getTweetsByInfluencer($seacrh)
+    public function getTweetsByInfluencer($search)
     {
         $field = '';
         $search_value = '';
-        if (isset($seacrh['screen_name']) && trim($seacrh['screen_name']) != '') {
+        if (isset($search['screen_name']) && trim($search['screen_name']) != '') {
             $field = 'user.screen_name';
-            $search_value = trim($seacrh['screen_name']);
-        }else if (isset($seacrh['id']) && trim($seacrh['id']) != '') {
+            $search_value = trim($search['screen_name']);
+        }else if (isset($search['id']) && trim($search['id']) != '') {
             $field = 'user.id_str';
-            $search_value = trim($seacrh['id']);
+            $search_value = trim($search['id']);
         }
         if ($field != '') {
             $params = [
@@ -116,9 +129,16 @@ class ElasticTweets extends Elastic
                 ]
             ]
         ];
-        $response = $this->client->search($params);
-        return $response['hits']['hits'];
+        try {
+            $response = $this->client->search($params);
+            return $response['hits']['hits'];
+        }catch (\Exception $exception){
+            dump($exception->getMessage());
+        }
+
     }
+
+
 
 
 }

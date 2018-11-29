@@ -8,20 +8,45 @@ namespace App\Libraries\Twitter;
 class TwitterTweets extends Twitter
 {
 
-    /**
-     * @param string $screen_name
-     * @return mixed
-     */
+    public function getTweetById($id)
+    {
+        $url = $this->api_url."statuses/show.json";
+
+        $query = array(
+            'id' => $id,
+            'tweet_mode' => 'extended'
+        );
+
+        $tweet = $this->getData([
+            'method' => 'GET',
+            'url' => $url,
+            'query' => $query
+        ]);
+
+        return $tweet;
+    }
+
+
     public function getTweetsByUser($screen_name='miputotuit')
     {
-        $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+        $url = $this->api_url."statuses/user_timeline.json";
+
         $query = array(
             'screen_name' => urlencode($screen_name),
             'tweet_mode' => 'extended'
         );
-        $user = $this->getTwitterData('GET', $url, $query);
+
+        $user = $this->getData([
+            'method' => 'GET',
+            'url' => $url,
+            'query' => $query
+        ]);
+
         return $user;
     }
+
+
+
 
 
 }

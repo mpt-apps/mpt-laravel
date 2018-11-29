@@ -12,6 +12,8 @@ class Twitter
     protected $api_key;
     protected $api_secret_key;
 
+    protected $api_url;
+
     /**
      * Twitter constructor.
      */
@@ -20,6 +22,8 @@ class Twitter
         $this->access_token_secret = $_ENV["TWITTER_TOKEN_SECRET"];
         $this->api_key = $_ENV["TWITTER_API_KEY"];
         $this->api_secret_key = $_ENV["TWITTER_API_SECRET_KEY"];
+
+        $this->api_url = 'https://api.twitter.com/1.1/';
     }
 
     /**
@@ -35,6 +39,11 @@ class Twitter
             'oauth_timestamp' => time(),
             'oauth_version' => '1.0'
         );
+    }
+
+
+    function getData($params){
+        return $this->getTwitterData($params['method'], $params['url'], $params['query']);
     }
 
     /**

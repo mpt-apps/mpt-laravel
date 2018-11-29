@@ -9,13 +9,11 @@ class Elastic
 {
 
     protected $client;
+    protected $hosts;
 
-    /**
-     * Elastic constructor.
-     */
-    function __construct()
+    function __construct($hosts = null)
     {
-        $hosts = [
+        $this->hosts = $hosts ?: [
             [
                 'host' => $_ENV["ELASTICSEARCH_HOST"],
                 'port' => $_ENV["ELASTICSEARCH_PORT"],
@@ -24,14 +22,19 @@ class Elastic
                 'pass' => $_ENV["ELASTICSEARCH_PASS"]
             ]
         ];
+
+        $this->setClient();
+
+    }
+
+    public function setClient()
+    {
         $this->client = ClientBuilder::create()
-            ->setHosts($hosts)
+            ->setHosts($this->hosts)
             ->build();
     }
 
-    /**
-     * @param $hosts
-     */
+
     public function setHosts($hosts)
     {
         $this->client = ClientBuilder::create()
@@ -39,13 +42,16 @@ class Elastic
             ->build();
     }
 
-    /**
-     * @param $index_name
-     */
+
+
     public function deleteIndex($index_name)
     {
         $params = ['index' =>$index_name];
-        $this->client->indices()->delete($params);
+        try {
+            $this->client->indices()->delete($params);
+        } catch (\Exception $exception){
+            dump($exception->getMessage());
+        }
     }
 
 }
