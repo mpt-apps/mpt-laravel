@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Libraries\MptTweets;
 use Illuminate\Console\Command;
 
 class UpdateTweets extends Command
@@ -37,6 +38,7 @@ class UpdateTweets extends Command
      */
     public function handle()
     {
-        //
+        $mptTweetsManager = new MptTweets();
+        $mptTweetsManager->updateTweets();
     }
 }

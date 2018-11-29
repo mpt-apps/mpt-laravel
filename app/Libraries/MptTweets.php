@@ -2,6 +2,7 @@
 namespace App\Libraries;
 
 
+use App\Influencer;
 use App\Libraries\Elastic\ElasticTweets;
 use App\Libraries\Twitter\TwitterTweets;
 
@@ -19,12 +20,25 @@ class MptTweets
     }
 
 
+    public function updateTweets(){
+
+        $influencers = Influencer::where('active', 1)->get();
+
+        foreach ($influencers as $influencer) {
+            dump('Twitter User: '. $influencer['name'].' -- Screen Name: '.$influencer['twitter_screen_name']);
+            $this->storeTweetsByUser($influencer['twitter_screen_name']);
+        }
+    }
+
+
     public function storeTweetsByUser($screen_name)
     {
         $tweets = $this->twitter->getTweetsByUser($screen_name);
 
         foreach ($tweets as $tweet) {
-            $new = $this->elasticsearch->saveTweet($tweet);
+            if ($new = $this->elasticsearch->saveTweet($tweet)) {
+                dump($new['_id']);
+            }
         }
     }
 

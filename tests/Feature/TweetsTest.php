@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Libraries\MptTweets;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use App\Libraries\MptTweets;
 use App\Libraries\Elastic\ElasticTweets;
 use App\Libraries\Twitter\TwitterTweets;
 
@@ -64,14 +64,15 @@ class TweetsTest extends TestCase
     /** @test */
     public function mpt_store_tweets_from_a_influencer()
     {
-        // Get a user
-
-        // Save all tweets from a user
-
         $elasticsearchTweetsManager = new ElasticTweets(
             getElasticsearchTestHosts()
         );
         $elasticsearchTweetsManager->deleteIndex('twitter');
+
+        $tweets = $elasticsearchTweetsManager->getAll();
+
+        $this->assertCount(0, $tweets);
+
 
         $mptTweetsManager = new MptTweets($elasticsearchTweetsManager);
 
@@ -82,9 +83,8 @@ class TweetsTest extends TestCase
 
         $tweets = $elasticsearchTweetsManager->getAll();
 
-        dd(count($tweets));
+        $this->assertTrue(count($tweets) > 0);
 
-        $this->assertTrue(true);
     }
 
 

@@ -133,7 +133,7 @@ class ElasticTweets extends Elastic
             $response = $this->client->search($params);
             return $response['hits']['hits'];
         }catch (\Exception $exception){
-            dump($exception->getMessage());
+            return [];
         }
 
     }
