@@ -24,8 +24,20 @@ class ElasticTweetsTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_existent_twitter_by_id()
+    public function it_create_a_new_index()
     {
+        $tweetsManagerInElasticsearch = new ElasticTweets(
+            getElasticsearchTestHosts()
+        );
+        $tweetsManagerInElasticsearch->deleteIndex('twitter');
+
+        $response = $tweetsManagerInElasticsearch->createIndex();
+
+        $this->assertEquals('twitter', $response['index']);
+
+        $response = $tweetsManagerInElasticsearch->createIndex();
+
+        $this->assertFalse($response);
 
     }
 }

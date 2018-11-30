@@ -18,6 +18,29 @@ class ElasticTweets extends Elastic
             'index' => 'twitter',
             'type' => 'tweets'
         ];
+
+        $this->createIndex();
+
+    }
+
+    public function createIndex()
+    {
+        $params = [
+            'index' => $this->elastic_info['index'],
+            'body' => [
+                "index.mapping.total_fields.limit" => 20000,
+                "number_of_shards" => 1,
+                "number_of_replicas" => 0
+            ]
+        ];
+
+        try {
+            $response = $this->client->indices()->create($params);
+            return $response;
+        }catch (\Exception $exception){
+            return false;
+        }
+
     }
 
     /**
@@ -49,11 +72,42 @@ class ElasticTweets extends Elastic
 
         if (trim($id) != '' && !$this->getTweetById($id)) {
             $params['id'] = $id;
-            return $this->client->index($params);
+            try {
+                return $this->client->index($params);
+            }catch (\Exception $exception){
+                dump(' !!!!!!! Error Saving Tweet with Id: '.$params['id']);
+                return false;
+            }
+
         }
 
         return false;
     }
+
+
+    /**
+     * @return array
+     */
+    public function getAll() {
+        $params = [
+            "size" => 50,
+            'index' => $this->elastic_info['index'],
+            'type' => $this->elastic_info['type'],
+            "body" => [
+                "query" => [
+                    "match_all" => new \stdClass()
+                ]
+            ]
+        ];
+        try {
+            $response = $this->client->search($params);
+            return $response['hits']['hits'];
+        }catch (\Exception $exception){
+            return [];
+        }
+
+    }
+
 
 
     /**
@@ -115,27 +169,30 @@ class ElasticTweets extends Elastic
         return $results;
     }
 
-    /**
-     * @return array
-     */
-    public function getAll() {
-        $params = [
-            "size" => 50,
-            'index' => $this->elastic_info['index'],
-            'type' => $this->elastic_info['type'],
-            "body" => [
-                "query" => [
-                    "match_all" => new \stdClass()
-                ]
-            ]
-        ];
+
+    public function getTweetsByHashtag( $hashtag )
+    {
         try {
+            $params = [
+                'index' => $this->elastic_info['index'],
+                'type' => $this->elastic_info['type'],
+                "size" => 50,
+                'body' => [
+                    'query' => [
+                        'bool' => [
+                            'must' => [
+                                'match' => ['entities.hashtags.text' => $hashtag]
+                            ]
+                        ]
+                    ]
+                ]
+            ];
             $response = $this->client->search($params);
-            return $response['hits']['hits'];
-        }catch (\Exception $exception){
+            $results = $response['hits']['hits'];
+            return $results;
+        } catch (\Exception $exception) {
             return [];
         }
-
     }
 
 

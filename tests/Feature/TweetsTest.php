@@ -87,6 +87,31 @@ class TweetsTest extends TestCase
 
     }
 
+    /** @test */
+    public function mpt_get_tweets_by_hashtag()
+    {
+        $elasticsearchTweetsManager = new ElasticTweets();
+
+        $tweets = $elasticsearchTweetsManager->getTweetsByHashtag('ReformaALaJusticia');
+
+        dump($tweets[0]);
+
+        $this->assertTrue(count($tweets) > 0);
+
+    }
+
+    /** @test */
+    public function mpt_get_tweets_from_a_influencer_db_production () {
+        $elasticsearchTweetsManager = new ElasticTweets();
+
+        $tweets = $elasticsearchTweetsManager->getTweetsByInfluencer([
+            'screen_name' => 'JERobledo'
+        ]);
+        dump($tweets);
+
+        $this->assertTrue(true);
+    }
+
 
 
 
