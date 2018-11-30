@@ -35,9 +35,11 @@ class MptTweets
     {
         $tweets = $this->twitter->getTweetsByUser($screen_name);
 
-        foreach ($tweets as $tweet) {
-            if ($new = $this->elasticsearch->saveTweet($tweet)) {
-                dump($new['_id']);
+        if (count($tweets) > 0) {
+            foreach ($tweets as $tweet) {
+                if ($new = $this->elasticsearch->saveTweet($tweet)) {
+                    dump($new['_id']);
+                }
             }
         }
     }
