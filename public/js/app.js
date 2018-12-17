@@ -48146,6 +48146,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48267,9 +48277,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data']
@@ -48285,9 +48292,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card", attrs: { id: "influencer-" + _vm.data.id } },
+    { staticClass: "admin-card", attrs: { id: "influencer-" + _vm.data.id } },
     [
-      _c("div", { staticClass: "card-header" }, [
+      _c("div", { staticClass: "admin-card-header" }, [
+        _c("img", {
+          staticClass: "rounded-circle float-left",
+          attrs: { src: _vm.data.twitter_image_url }
+        }),
+        _vm._v(" "),
         _c("h4", [
           _vm._v("@"),
           _c("span", {
@@ -48296,75 +48308,30 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "card-body d-flex justify-content-between" }, [
-        _c(
-          "div",
-          { staticClass: "p-2", staticStyle: { background: "#1d68a7" } },
-          [
-            _c("img", {
-              attrs: {
-                src: _vm.data.twitter_image_url,
-                width: "100",
-                height: "100px"
-              }
-            })
-          ]
-        ),
+      _c("div", { staticClass: "admin-card-body" }, [
+        _c("h4", { domProps: { textContent: _vm._s(_vm.data.name) } }),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "flex-fill p-2",
-            staticStyle: { background: "#2fa360" }
-          },
-          [
-            _c("h4", { domProps: { textContent: _vm._s(_vm.data.name) } }),
-            _vm._v(" "),
-            _c("h5", [
-              _vm._v("@"),
-              _c("span", {
-                domProps: { textContent: _vm._s(_vm.data.twitter_screen_name) }
-              })
-            ]),
-            _vm._v(" "),
-            _c("p", {
-              domProps: { textContent: _vm._s(_vm.data.twitter_description) }
-            })
-          ]
-        ),
+        _c("div", { staticClass: "clearfix" }),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "p-2", staticStyle: { background: "#1d68a7" } },
-          [
-            _c("div", [
-              _c("span", {
-                domProps: {
-                  textContent: _vm._s(_vm.data.twitter_followers_count)
-                }
-              }),
-              _vm._v(" Followers")
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", {
-                domProps: {
-                  textContent: _vm._s(_vm.data.twitter_friends_count)
-                }
-              }),
-              _vm._v(" Follow")
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("span", {
-                domProps: {
-                  textContent: _vm._s(_vm.data.twitter_statuses_count)
-                }
-              }),
-              _vm._v(" Twitts")
-            ])
-          ]
-        )
+        _c("p", [
+          _c("span", {
+            domProps: { textContent: _vm._s(_vm.data.twitter_followers_count) }
+          }),
+          _vm._v(" Followers "),
+          _c("br"),
+          _vm._v(" "),
+          _c("span", {
+            domProps: { textContent: _vm._s(_vm.data.twitter_friends_count) }
+          }),
+          _vm._v(" Follow "),
+          _c("br"),
+          _vm._v(" "),
+          _c("span", {
+            domProps: { textContent: _vm._s(_vm.data.twitter_statuses_count) }
+          }),
+          _vm._v(" Twitts "),
+          _c("br")
+        ])
       ])
     ]
   )
@@ -48419,36 +48386,34 @@ var render = function() {
       _c("div", { staticClass: "d-flex flex-row" }, [
         _c("div", { staticClass: "flex-fill p-2" }, [
           _c("span", { domProps: { textContent: _vm._s(_vm.dataSet.total) } }),
-          _vm._v(" Influencers")
+          _vm._v(" Influencers\n        ")
         ]),
         _vm._v(" "),
         _vm._m(0)
       ]),
       _vm._v(" "),
-      _vm._l(_vm.items, function(influencer, index) {
-        return _c(
-          "div",
-          { key: influencer.id },
-          [
-            _c("influencer", {
-              attrs: { data: influencer },
-              on: {
-                deleted: function($event) {
-                  _vm.remove(index)
-                }
+      _c(
+        "div",
+        { staticClass: "row admin-influencers-list" },
+        _vm._l(_vm.items, function(influencer, index) {
+          return _c("influencer", {
+            key: influencer.id,
+            attrs: { data: influencer },
+            on: {
+              deleted: function($event) {
+                _vm.remove(index)
               }
-            })
-          ],
-          1
-        )
-      }),
+            }
+          })
+        })
+      ),
       _vm._v(" "),
       _c("paginator", {
         attrs: { dataSet: _vm.dataSet },
         on: { changed: _vm.fetch }
       })
     ],
-    2
+    1
   )
 }
 var staticRenderFns = [

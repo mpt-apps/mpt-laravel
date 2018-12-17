@@ -9506,3 +9506,34 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.admin-influencers-list .admin-card {
+  width: 300px;
+  height: 250px;
+  margin: 15px;
+  background: #ffffff;
+}
+
+.admin-influencers-list .admin-card h4 {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.admin-influencers-list .admin-card .admin-card-header {
+  background: #e95d00;
+  color: #ffffff;
+  height: 50px;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.admin-influencers-list .admin-card .admin-card-header img {
+  width: 100px;
+  height: 100px;
+  border: #ffffff 4px solid;
+  background: #ffffff;
+}
+
+.admin-influencers-list .admin-card .admin-card-body p {
+  padding: 10px 20px;
+}

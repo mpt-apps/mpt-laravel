@@ -12,3 +12,45 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.admin-influencers-list{
+
+  .admin-card {
+    width: 300px;
+    height: 250px;
+    margin: 15px;
+    background: #ffffff;
+
+    h4 {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    .admin-card-header {
+      background: #e95d00;
+      color: #ffffff;
+      height: 50px;
+      vertical-align: middle;
+      padding: 5px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border: #ffffff 4px solid;
+        background: #ffffff;
+      }
+
+    }
+
+    .admin-card-body {
+
+      p {
+        padding: 10px 20px;
+      }
+
+    }
+
+  }
+
+}
+

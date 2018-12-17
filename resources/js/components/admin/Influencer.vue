@@ -1,26 +1,23 @@
 <template>
 
-    <div :id="'influencer-'+data.id" class="card">
+    <div :id="'influencer-'+data.id" class="admin-card">
 
-        <div class="card-header">
+        <div class="admin-card-header">
+            <img :src="data.twitter_image_url" class="rounded-circle float-left">
             <h4>@<span v-text="data.twitter_screen_name"></span></h4>
         </div>
 
-        <div class="card-body d-flex justify-content-between">
+        <div class="admin-card-body">
 
-                <div class="p-2" style="background: #1d68a7;"><img :src="data.twitter_image_url" width="100" height="100px"></div>
+            <h4 v-text="data.name"></h4>
 
-                <div class="flex-fill p-2" style="background: #2fa360;">
-                    <h4 v-text="data.name"></h4>
-                    <h5>@<span v-text="data.twitter_screen_name"></span></h5>
-                    <p v-text="data.twitter_description"></p>
-                </div>
+            <div class="clearfix"></div>
 
-                <div class="p-2" style="background: #1d68a7;">
-                    <div><span v-text="data.twitter_followers_count"></span> Followers</div>
-                    <div><span v-text="data.twitter_friends_count"></span> Follow</div>
-                    <div><span v-text="data.twitter_statuses_count"></span> Twitts</div>
-                </div>
+            <p>
+                <span v-text="data.twitter_followers_count"></span> Followers <br/>
+                <span v-text="data.twitter_friends_count"></span> Follow <br/>
+                <span v-text="data.twitter_statuses_count"></span> Twitts <br/>
+            </p>
 
         </div>
 

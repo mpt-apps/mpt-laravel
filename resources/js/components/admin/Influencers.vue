@@ -1,11 +1,21 @@
 <template>
         <div class="container">
             <div class="d-flex flex-row">
-                <div class="flex-fill p-2"><span v-text="dataSet.total"></span> Influencers</div>
-                <div class="p-2"><a class="btn btn-success" href="/admin/influencers/create" role="button"><span class="fas fa-plus"></span></a></div>
+                <div class="flex-fill p-2">
+                    <span v-text="dataSet.total"></span> Influencers
+                </div>
+                <div class="p-2">
+                    <a class="btn btn-success" href="/admin/influencers/create" role="button">
+                        <span class="fas fa-plus"></span>
+                    </a>
+                </div>
             </div>
-            <div v-for="(influencer, index) in items" :key="influencer.id">
-                <influencer :data="influencer" @deleted="remove(index)"></influencer>
+            <div class="row admin-influencers-list">
+                <influencer v-for="(influencer, index) in items"
+                            :key="influencer.id"
+                            :data="influencer"
+                            @deleted="remove(index)">
+                </influencer>
             </div>
             <paginator :dataSet="dataSet" @changed="fetch"></paginator>
         </div>

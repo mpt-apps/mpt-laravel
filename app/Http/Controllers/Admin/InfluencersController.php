@@ -33,7 +33,8 @@ class InfluencersController extends Controller
 
     public function list()
     {
-        return $influencers = Influencer::orderBy('name')->paginate(10);
+         $influencers = Influencer::orderBy('name')->paginate(20);
+         return $influencers;
     }
 
     /**
