@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    export default {
+    module.exports = {
         props: ['message'],
         error: ['error'],
 

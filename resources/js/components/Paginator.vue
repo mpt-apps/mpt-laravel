@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    export default {
+    module.exports = {
         props: ['dataSet'],
         data() {
             return {

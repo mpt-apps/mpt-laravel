@@ -15,9 +15,18 @@
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^2.1.14",
+        "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
+        "neo-async": "^2.6.0",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "sass": "^1.17.3",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "vue-loader": "^15.7.0",
+        "vue-router": "^3.0.2"
     }
 }

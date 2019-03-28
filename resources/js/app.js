@@ -14,10 +14,10 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('flash', require('./components/Flash.vue'));
-Vue.component('paginator', require('./components/Paginator.vue'));
+Vue.component('flash', require('./components/Flash.vue').default);
+Vue.component('paginator', require('./components/Paginator.vue').default);
 
-Vue.component('admin-influencers-view', require('./pages/AdminInfluencers.vue'));
+Vue.component('admin-influencers-view', require('./pages/AdminInfluencers.vue').default);
 
 const app = new Vue({
     el: '#app'
